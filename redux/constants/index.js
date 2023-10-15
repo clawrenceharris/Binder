@@ -1,0 +1,33 @@
+export const USER = 'USER'
+export const USER_NOTES = 'USER_NOTES'
+export const USER_FLASHCARDS = 'USER_FLASHCARDS'
+export const USER_CLASSES = 'USER_CLASSES'
+export const USER_DESK = 'USER_DESK'
+export const USER_STUDY_BUDDIES = 'USER_STUDY_BUDDIES'
+export const USER_CHATROOMS = 'USER_CHATROOMS'
+export const USER_FRIENDS = 'USER_FRIENDS'
+
+export const USERS = 'USERS'
+export const USERS_NOTES = 'USERS_NOTES'
+export const USERS_FLASHCARDS = 'USERS_FLASHCARDS'
+export const USERS_CLASSES = 'USERS_CLASSES'
+export const USERS_DESK = 'USERS_DESK'
+export const USERS_STUDY_BUDDIES = 'USERS_STUDY_BUDDIES'
+export const USERS_CHATROOMS = 'USERS_CHATROOMS'
+export const USERS_FRIENDS = 'USERS_FRIENDS'
+export const USER_SCHOOL = 'USER_SCHOOL'
+export const USERS_FRIENDS_DESK = 'USERS_FRIENDS_DESK'
+
+export const CLASS = 'CLASS'
+export const CLASS_USERS = 'CLASS_USERS'
+export const CLASS_DESK = 'CLASS_DESK'
+export const SET_RANK = 'SET_RANK'
+
+
+export const CLASSES = 'CLASSES'
+export const CLASSES_USERS = 'CLASSES_USERS'
+export const CLASSES_DESK = 'CLASSES_DESK'
+
+export const SCHOOL = 'SCHOOL'
+export const SCHOOL_USERS = 'SCHOOL_USERS'
+export const SCHOOL_CLASSES = 'SCHOOL_CLASSES'

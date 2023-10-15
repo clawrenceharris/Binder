@@ -1,0 +1,12 @@
+export const INVALID_USERNAME_OR_PASSWORD = 'The username or password you entered is incorrect.';
+export const INVALID_PASSWORD = 'The password you entered is incorrect.';
+export const INVALID_EMAIL = 'Please enter a valid email address.';
+export const INVALID_USERNAME = 'We could not find an account with this username.';
+export const USER_NOT_FOUND = 'We could not find an account with this email.';
+export const TOO_MANY_REQUESTS = 'Too many failed requests. Please try again later.';
+export const NETWORK_REQUEST_FAILED = 'Failed to connect to a network. Please make sure you are connected to the internet.';
+export const WEAK_PASSWORD = 'Password must be at least 6 characters long.';
+export const EMAIL_ALREADY_IN_USE = 'The email address is already in use.';
+export const SOMETHING_WENT_WRONG = 'Sorry, something went wrong Please try again later.';
+export const INVALID_BIRTHDAY = 'You must at least 13 years old.';
+export const UNSUPPORTED_FILE_TYPE = "The selected file type is not supported."
