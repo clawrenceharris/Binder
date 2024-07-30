@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "Binder",
-    "slug": "Binder",
+    "slug": "binder",
     "version": "1.0.0",
+
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.calebharris.Binder"
@@ -22,14 +21,15 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.calebharris.binder"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "5e3ab071-1c6a-4a6f-82b5-f51a080798a7"
+        "projectId": "5480acd8-b986-4f3e-82cb-ca14da160bb5"
       }
     },
     "runtimeVersion": "1.0.0",

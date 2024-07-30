@@ -37,6 +37,7 @@ const DeskItemThumbnail = ({
     const colorScheme = useColorScheme();
     const navigation = useNavigation();
     const currentUser = useSelector(state => state.userState.currentUser);
+    console.log(deskItem.media);
     const [currentLikeState, setCurrentLikeState] = useState({
         state: deskItem?.likes?.includes(auth.currentUser.uid),
         count: deskItem?.likes?.length || 0
@@ -134,89 +135,88 @@ const DeskItemThumbnail = ({
             </View>
         )
     }
-    if (!deskItem?.id) {
-        return (
-            <View style={[styles.mainContainer, { backgroundColor: Colors[colorScheme].lightGray, alignItems: 'center', justifyContent: 'center', ...style }]}>
-                <ActivityIndicator color={Colors.accent} />
-            </View>
+        // return (
+        //     <View style={[styles.mainContainer, { backgroundColor: Colors[colorScheme].lightGray, alignItems: 'center', justifyContent: 'center', ...style }]}>
+        //         <ActivityIndicator color={Colors.accent} />
+        //     </View>
 
-        )
-    }
+        // )
+    
 
-    if (useCase == 'share' || useCase == 'edit') {
-        return (
-            <View
+    // if (useCase == 'share' || useCase == 'edit') {
+    //     return (
+    //         <View
 
-                style={[styles.mainContainer, { backgroundColor: Colors[colorScheme].invertedTint, ...SHADOWS[colorScheme], width: 140, height: 170, ...style }]}>
+    //             style={[styles.mainContainer, { backgroundColor: Colors[colorScheme].invertedTint, ...SHADOWS[colorScheme], width: 140, height: 170, ...style }]}>
 
-                <View style={styles.headerContainer}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <ProfileButton
-                            defaultImage={deskItem.isAnonymous && assets.person_gradient.uri}
-                            imageURL={deskItem.isAnonymous ? null : deskItem.user?.photoURL}
-                            size={25}
-                        />
-                    </View>
-
-
-                    <CustomImage
-                        source={deskItem.isPublic ? assets.unlock : assets.lock}
-                        style={{ tintColor: deskItem.isPublic ? Colors.accent : Colors[colorScheme].darkGray, width: 20, height: 20, position: 'absolute', right: 0 }}
+    //             <View style={styles.headerContainer}>
+    //                 <View style={{ flexDirection: 'row' }}>
+    //                     <ProfileButton
+    //                         defaultImage={deskItem.isAnonymous && assets.person_gradient.uri}
+    //                         imageURL={deskItem.isAnonymous ? null : deskItem.user?.photoURL}
+    //                         size={25}
+    //                     />
+    //                 </View>
 
 
-                    />
-                </View>
-
-                {deskItem.type != "Flashcards" && deskItem.type != "Game" ?
-
-                    <View style={{ marginBottom: 10, height: 110 }}>
-
-                        <CustomImage source={{ uri: deskItem.media[0] }} style={[styles.image, { borderRadius: 10 }]} />
-
-                        <View style={[styles.imageOverlay, { borderRadius: 10 }]} />
-
-                        <View style={styles.titleContianer}>
-                            {deskItem.divisionNumber &&
-                                <RegularText white>
-                                    {deskItem.divisionType + " " + deskItem.divisionNumber}
-                                </RegularText>
-                            }
-                            <MediumText h4 white style={{ textAlign: 'center' }}>{deskItem.title}</MediumText>
-                        </View>
+    //                 <CustomImage
+    //                     source={deskItem.isPublic ? assets.unlock : assets.lock}
+    //                     style={{ tintColor: deskItem.isPublic ? Colors.accent : Colors[colorScheme].darkGray, width: 20, height: 20, position: 'absolute', right: 0 }}
 
 
+    //                 />
+    //             </View>
 
+    //             {deskItem.type != "Flashcards" && deskItem.type != "Game" ?
 
-                    </View>
-                    :
+    //                 <View style={{ marginBottom: 10, height: 110 }}>
 
-                    <View>
-                        <View style={[styles.flashcardContainer, {
-                            ...SHADOWS[colorScheme],
-                        }]}>
-                            {deskItem.type == "Game" ?
-                                <CustomImage source={assets.play} style={{ position: 'absolute', width: '50%', height: '100%', tintColor: Colors.primary + "50" }} />
-                                :
-                                <CustomImage source={assets.flashcards} style={{ position: 'absolute', width: '50%', height: '100%', tintColor: Colors.accent + "50", transform: [{ rotate: '90deg' }] }} />
+    //                     <CustomImage source={{ uri: deskItem.media[0] }} style={[styles.image, { borderRadius: 10 }]} />
 
-                            }
-                            {deskItem.divisionNumber != null &&
-                                <RegularText darkgray>{deskItem.divisionType + " " + deskItem.divisionNumber}</RegularText>}
-                            <MediumText accent={deskItem.type == "Flashcards"} primary={deskItem.type == "Game"} h4 style={{ textAlign: 'center' }}>{deskItem.title}</MediumText>
+    //                     <View style={[styles.imageOverlay, { borderRadius: 10 }]} />
 
-                        </View>
-                    </View>
-                }
-
-
-            </View>
+    //                     <View style={styles.titleContianer}>
+    //                         {deskItem.divisionNumber &&
+    //                             <RegularText white>
+    //                                 {deskItem.divisionType + " " + deskItem.divisionNumber}
+    //                             </RegularText>
+    //                         }
+    //                         <MediumText h4 white style={{ textAlign: 'center' }}>{deskItem.title}</MediumText>
+    //                     </View>
 
 
 
 
-        )
-    }
-    return (
+    //                 </View>
+    //                 :
+
+    //                 <View>
+    //                     <View style={[styles.flashcardContainer, {
+    //                         ...SHADOWS[colorScheme],
+    //                     }]}>
+    //                         {deskItem.type == "Game" ?
+    //                             <CustomImage source={assets.play} style={{ position: 'absolute', width: '50%', height: '100%', tintColor: Colors.primary + "50" }} />
+    //                             :
+    //                             <CustomImage source={assets.flashcards} style={{ position: 'absolute', width: '50%', height: '100%', tintColor: Colors.accent + "50", transform: [{ rotate: '90deg' }] }} />
+
+    //                         }
+    //                         {deskItem.divisionNumber != null &&
+    //                             <RegularText darkgray>{deskItem.divisionType + " " + deskItem.divisionNumber}</RegularText>}
+    //                         <MediumText accent={deskItem.type == "Flashcards"} primary={deskItem.type == "Game"} h4 style={{ textAlign: 'center' }}>{deskItem.title}</MediumText>
+
+    //                     </View>
+    //                 </View>
+    //             }
+
+
+    //         </View>
+
+
+
+
+    //     )
+    // }
+     return (
 
 
         <TouchableWithoutFeedback
@@ -251,7 +251,7 @@ const DeskItemThumbnail = ({
 
                     <View style={{ marginVertical: 10, height: 160 }}>
 
-                        <CustomImage source={{ uri: deskItem.media[0] }} style={[styles.image]} />
+                       {deskItem.media && <CustomImage source={{ uri: deskItem.media[0] }} style={styles.image} />}
 
                         <View style={styles.imageOverlay} />
 
@@ -290,7 +290,7 @@ const DeskItemThumbnail = ({
                         </View>
                     </View>
 
-                }
+                } 
                 <BottomActionBar style={{ bottom: 0 }} />
 
             </View>
